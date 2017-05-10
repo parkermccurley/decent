@@ -1,0 +1,19 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    commander (4.4.3)
+      highline (~> 1.7.2)
+    highline (1.7.8)
+    sequel (4.46.0)
+    sqlite3 (1.3.13)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  commander
+  sequel
+  sqlite3
+
+BUNDLED WITH
+   1.14.6
