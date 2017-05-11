@@ -1,3 +1,2 @@
 class ListExchangeRateCommand < ExchangeRateCommand
-
 end

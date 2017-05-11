@@ -1,0 +1,2 @@
+class LitecoinHolding < Holding
+end

@@ -1,3 +1,2 @@
 class HoldingCommand < Command
-
 end

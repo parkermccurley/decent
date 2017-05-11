@@ -1,3 +1,2 @@
 class Command
-
 end

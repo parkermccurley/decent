@@ -1,3 +1,2 @@
 class Bitcoin < Currency
-
 end

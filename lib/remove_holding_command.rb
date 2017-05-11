@@ -1,3 +1,2 @@
 class RemoveHoldingCommand < HoldingCommand
-
 end

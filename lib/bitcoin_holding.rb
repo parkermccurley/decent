@@ -1,0 +1,2 @@
+class BitcoinHolding < Holding
+end

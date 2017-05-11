@@ -1,3 +1,2 @@
 class AddHoldingCommand < HoldingCommand
-
 end
