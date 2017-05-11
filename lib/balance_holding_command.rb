@@ -1,0 +1,3 @@
+class BalanceHoldingCommand < HoldingCommand
+
+end

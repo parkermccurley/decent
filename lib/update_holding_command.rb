@@ -1,0 +1,3 @@
+class UpdateHoldingCommand < HoldingCommand
+
+end

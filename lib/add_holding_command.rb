@@ -1,0 +1,3 @@
+class AddHoldingCommand < HoldingCommand
+
+end
