@@ -9,7 +9,7 @@ require "commander/import"
 require "../db/setup.rb"
 
 # Application Requirements
-require "./coin/api_call.rb"
+require "./api_call.rb"
 
 program :name, "coin"
 program :version, "0.0.1"
