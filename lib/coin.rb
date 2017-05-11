@@ -6,10 +6,10 @@ require "bundler/setup"
 require "commander/import"
 
 # Persistence Requirements
-require "../db/setup.rb"
+require "../db/setup"
 
 # Application Requirements
-require "./api_call.rb"
+require "./api_call"
 
 program :name, "coin"
 program :version, "0.0.1"
