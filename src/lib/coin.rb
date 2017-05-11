@@ -5,9 +5,11 @@ require "rubygems"
 require "bundler/setup"
 require "commander/import"
 
-# Application Requirements
+# Persistence Requirements
 require "../db/setup.rb"
-require "./services/api_call.rb"
+
+# Application Requirements
+require "./coin/api_call.rb"
 
 program :name, "coin"
 program :version, "0.0.1"

@@ -6,11 +6,11 @@ class APICall
     @method = method
   end
 
-  def call()
+  def call
     case @method
-    when 'get'
+    when "get"
       RestClient.get @url
-    when 'post'
+    when "post"
       RestClient.post @url
     end
   end
