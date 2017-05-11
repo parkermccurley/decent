@@ -1,0 +1,3 @@
+class Litecoin < Currency
+
+end

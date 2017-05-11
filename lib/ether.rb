@@ -1,0 +1,3 @@
+class Ether < Currency
+
+end
