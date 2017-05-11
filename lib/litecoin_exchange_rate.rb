@@ -1,0 +1,2 @@
+class LitecoinExchangeRate < ExchangeRate
+end
