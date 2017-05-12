@@ -8,5 +8,8 @@ require "rubygems"
 require "../db/setup"
 
 # Application Requirements
+require "./coin/command/test_command"
+require "./coin/service/api_call"
+
+# Entrypoint Requirement
 require "./coin/program"
-require "./coin/services/api_call"

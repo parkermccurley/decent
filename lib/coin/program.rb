@@ -4,10 +4,6 @@ program :description, "A ruby command line application for managing cryptocurren
 
 # Test command to check
 command :test do |c|
-  c.syntax = "coin test"
-  c.description = "execute test command"
-  c.action do |args, options|
-    test_call = APICall.new("https://api.cryptonator.com/api/ticker/btc-usd", "get")
-    puts test_call.call
-  end
+  test_command = TestCommand.new(c)
+  test_command.activate
 end
