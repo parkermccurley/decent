@@ -1,0 +1,2 @@
+class UpdateExchangeRateCommand < ExchangeRateCommand
+end

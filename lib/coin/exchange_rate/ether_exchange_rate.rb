@@ -1,0 +1,2 @@
+class EtherExchangeRate < ExchangeRate
+end

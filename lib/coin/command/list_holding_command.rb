@@ -1,0 +1,2 @@
+class ListHoldingCommand < HoldingCommand
+end
