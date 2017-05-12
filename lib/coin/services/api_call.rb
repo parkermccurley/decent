@@ -1,5 +1,3 @@
-require "rest-client"
-
 class APICall
   def initialize(url, method)
     @url = url
