@@ -3,14 +3,14 @@ class UpdateHodlingCommand
     Database[:holdings].each do |hodling|
       case hodling[:currency]
       when "BTC"
-        # call BTC Address api
-        puts "I'm a BTC balance"
-      when "LTC"
-        # call LTC Address api
-        puts "I'm an LTC balance"
+        balance = BitcoinAddressBalanceApi.call hodling[:address]
+        Database[:holdings].where(id: hodling[:id]).update(balance: balance)
       when "ETH"
-        # call ETH Address api
-        puts "I'm an ETH balance"
+        balance = EtherAddressBalanceApi.call hodling[:address]
+        Database[:holdings].where(id: hodling[:id]).update(balance: balance)
+      when "LTC"
+        balance = LitecoinAddressBalanceApi.call hodling[:address]
+        Database[:holdings].where(id: hodling[:id]).update(balance: balance)
       end
     end
   end

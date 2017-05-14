@@ -3,12 +3,12 @@ class UpdateExchangeRateCommand
     case options.currency
     when "BTC"
       BitcoinExchangeRateApi.call
-    when "LTC"
-      LitecoinExchangeRateApi.call
     when "ETH"
       EtherExchangeRateApi.call
+    when "LTC"
+      LitecoinExchangeRateApi.call
     else
-      [BitcoinExchangeRateApi, LitecoinExchangeRateApi, EtherExchangeRateApi].each do |api|
+      [BitcoinExchangeRateApi, EtherExchangeRateApi, LitecoinExchangeRateApi].each do |api|
         api.call
       end
     end
