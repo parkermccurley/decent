@@ -8,7 +8,7 @@ unless Database.table_exists? :holdings
     String :nickname
     String :address
     String :currency
-    Float :last_value
+    Float :balance
     DateTime :created_at
     DateTime :updated_at
   end
