@@ -1,2 +1,0 @@
-class EtherExchangeRate < ExchangeRate
-end
