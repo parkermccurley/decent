@@ -1,2 +1,0 @@
-class EtherHolding < Holding
-end

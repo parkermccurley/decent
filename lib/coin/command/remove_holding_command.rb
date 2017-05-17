@@ -1,2 +1,0 @@
-class RemoveHoldingCommand < HoldingCommand
-end

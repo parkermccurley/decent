@@ -1,2 +1,0 @@
-class Ether < Currency
-end

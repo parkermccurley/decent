@@ -1,2 +1,0 @@
-class BitcoinHolding < Holding
-end
