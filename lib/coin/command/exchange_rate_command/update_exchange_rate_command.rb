@@ -1,15 +1,22 @@
 class UpdateExchangeRateCommand
-  def self.execute(args, options)
-    case options.currency
-    when "BTC"
-      BitcoinExchangeRateApi.call
-    when "ETH"
-      EtherExchangeRateApi.call
-    when "LTC"
-      LitecoinExchangeRateApi.call
-    else
-      [BitcoinExchangeRateApi, EtherExchangeRateApi, LitecoinExchangeRateApi].each do |api|
-        api.call
+  def self.execute
+    Database[:exchange_rates].each do |exchange_rate|
+      case exchange_rate[:currency]
+      when "BTC"
+        rate = BitcoinExchangeRateApi.call
+        Database[:exchange_rates]
+          .where(currency: exchange_rate[:currency])
+          .update(rate: rate, updated_at: DateTime.now)
+      when "ETH"
+        rate = EtherExchangeRateApi.call
+        Database[:exchange_rates]
+          .where(currency: exchange_rate[:currency])
+          .update(rate: rate, updated_at: DateTime.now)
+      when "LTC"
+        rate = LitecoinExchangeRateApi.call
+        Database[:exchange_rates]
+          .where(currency: exchange_rate[:currency])
+          .update(rate: rate, updated_at: DateTime.now)
       end
     end
   end
