@@ -1,6 +1,5 @@
 class RemoveHodlingCommand
   def self.execute(args)
-    address = args[1]
-    Database[:holdings].where(address: address).delete
+    Database[:holdings].where(address: args[1]).delete
   end
 end
