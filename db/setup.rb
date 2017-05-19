@@ -28,10 +28,6 @@ unless Database.table_exists? :exchange_rates
   ["BTC", "ETH", "LTC"].each do |currency|
     exchange_rates.insert(currency: currency, rate: 0.00, created_at: DateTime.now, updated_at: DateTime.now)
   end
-
-  exchange_rates.each do |row|
-    puts row
-  end
 end
 
 unless Database.table_exists? :historic_holdings
