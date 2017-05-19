@@ -22,12 +22,22 @@ unless Database.table_exists? :exchange_rates
     DateTime :created_at
     DateTime :updated_at
   end
+
+  exchange_rates = Database[:exchange_rates]
+
+  ["BTC", "ETH", "LTC"].each do |currency|
+    exchange_rates.insert(currency: currency, rate: 0.00, created_at: DateTime.now, updated_at: DateTime.now)
+  end
+
+  exchange_rates.each do |row|
+    puts row
+  end
 end
 
 unless Database.table_exists? :historic_holdings
   Database.create_table(:historic_holdings) do
     primary_key :id
-    # foreign_key holding_id
+    Integer :holding_id
     String :address
     String :currency
     Float :balance
@@ -40,7 +50,7 @@ end
 unless Database.table_exists? :historic_exchange_rates
   Database.create_table(:historic_exchange_rates) do
     primary_key :id
-    # foreign_key exchange_rate_id
+    Integer :exchange_rate_id
     String :currency
     Float :rate
     DateTime :recorded_at
