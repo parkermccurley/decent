@@ -7,7 +7,7 @@ require "rest-client"
 require "rubygems"
 
 # Persistence Requirements
-require "../db/setup"
+require "./coin/setup"
 
 # Application Requirements
 require "./coin/command/hodling_command"
