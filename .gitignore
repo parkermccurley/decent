@@ -30,9 +30,6 @@
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-### coin ###
-/lib/coin/storage/coin.db
-
 ### development ###
 /test.rb
 /blueprint.md
