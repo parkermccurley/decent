@@ -1,6 +1,5 @@
 class BalanceHodlingCommand
   def self.execute(args)
-    address = args[1]
-    puts Database[:holdings].where(address: address)[:balance]
+    puts Database[:holdings].where(address: args[1])[:balance]
   end
 end

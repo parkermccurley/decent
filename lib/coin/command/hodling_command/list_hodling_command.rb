@@ -1,8 +1,5 @@
 class ListHodlingCommand
   def self.execute
-    hodlings = Database[:holdings]
-    hodlings.each do |hodling|
-      puts hodling
-    end
+    Database[:holdings].each { |hodling| puts "#{hodling[:nickname]}: #{hodling[:balance]} #{hodling[:currency]}" }
   end
 end

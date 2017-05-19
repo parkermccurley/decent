@@ -31,7 +31,7 @@
 .rvmrc
 
 ### coin ###
-db/coin.db
+/lib/coin/storage/coin.db
 
 ### development ###
 /test.rb

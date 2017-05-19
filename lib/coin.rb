@@ -6,10 +6,8 @@ require "json"
 require "rest-client"
 require "rubygems"
 
-# Persistence Requirements
-require "../db/setup"
-
 # Application Requirements
+require "./coin/setup"
 require "./coin/command/hodling_command"
 require "./coin/command/hodling_command/add_hodling_command"
 require "./coin/command/hodling_command/balance_hodling_command"
@@ -19,14 +17,11 @@ require "./coin/command/hodling_command/update_hodling_command"
 require "./coin/command/exchange_rate_command"
 require "./coin/command/exchange_rate_command/list_exchange_rate_command"
 require "./coin/command/exchange_rate_command/update_exchange_rate_command"
-require "./coin/service/api"
-require "./coin/service/bitcoin_exchange_rate_api"
-require "./coin/service/bitcoin_address_balance_api"
-require "./coin/service/litecoin_exchange_rate_api"
-require "./coin/service/litecoin_address_balance_api"
-require "./coin/service/ether_exchange_rate_api"
-require "./coin/service/ether_address_balance_api"
+require "./coin/service/bitcoin_api"
+require "./coin/service/litecoin_api"
+require "./coin/service/ether_api"
 
+# Initialization
 program :name, "coin"
 program :version, "0.0.1"
 program :description, "A ruby command line application for managing cryptocurrency holdings."

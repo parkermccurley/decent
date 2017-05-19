@@ -1,23 +1,25 @@
 class UpdateExchangeRateCommand
+  def self.update_exchange_rate_database(currency, rate)
+    Database[:exchange_rates]
+      .where(currency: currency)
+      .update(rate: rate, updated_at: DateTime.now)
+  end
+
+  def self.get_exchange_rate(currency)
+    case currency
+    when "BTC"
+      return BitcoinAPI.get_exchange_rate
+    when "ETH"
+      return EtherAPI.get_exchange_rate
+    when "LTC"
+      return LitecoinAPI.get_exchange_rate
+    end
+  end
+
   def self.execute
     Database[:exchange_rates].each do |exchange_rate|
-      case exchange_rate[:currency]
-      when "BTC"
-        rate = BitcoinExchangeRateApi.call
-        Database[:exchange_rates]
-          .where(currency: exchange_rate[:currency])
-          .update(rate: rate, updated_at: DateTime.now)
-      when "ETH"
-        rate = EtherExchangeRateApi.call
-        Database[:exchange_rates]
-          .where(currency: exchange_rate[:currency])
-          .update(rate: rate, updated_at: DateTime.now)
-      when "LTC"
-        rate = LitecoinExchangeRateApi.call
-        Database[:exchange_rates]
-          .where(currency: exchange_rate[:currency])
-          .update(rate: rate, updated_at: DateTime.now)
-      end
+      rate = get_exchange_rate exchange_rate[:currency]
+      update_exchange_rate_database exchange_rate[:currency], rate
     end
   end
 end
