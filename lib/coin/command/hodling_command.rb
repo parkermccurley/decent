@@ -1,14 +1,16 @@
 class HodlingCommand
   def self.execute(args, options)
-    case args.first
+    command = args.first
+
+    case command
     when "add"
       AddHodlingCommand.execute
-    when "balance"
-      BalanceHodlingCommand.execute args
     when "list"
       ListHodlingCommand.execute
     when "remove"
       RemoveHodlingCommand.execute args
+    when "show"
+      ShowHodlingCommand.execute args
     when "update"
       UpdateHodlingCommand.execute
     end

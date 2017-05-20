@@ -1,5 +1,11 @@
 class ListExchangeRateCommand
   def self.execute
-    Database[:exchange_rates].each { |exchange_rate| puts "#{exchange_rate[:currency]}: #{exchange_rate[:rate]} USD" }
+    exchange_rates = Database[:exchange_rates]
+    exchange_rates.each do |exchange_rate|
+      currency = exchange_rate[:currency]
+      rate     = exchange_rate[:rate]
+
+      puts "#{currency}: #{rate} USD"
+    end
   end
 end

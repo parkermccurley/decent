@@ -1,5 +1,9 @@
 class RemoveHodlingCommand
   def self.execute(args)
-    Database[:holdings].where(address: args[1]).delete
+    hodlings = Database[:holdings]
+    nickname = args[1]
+    hodling = hodlings.where(nickname: nickname)
+
+    hodling.delete
   end
 end
