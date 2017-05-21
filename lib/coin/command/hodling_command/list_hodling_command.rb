@@ -1,5 +1,5 @@
 class ListHodlingCommand
-  def self.execute
+  def self.execute(args)
     hodlings = Database[:holdings]
     hodlings.each do |hodling|
       nickname   = hodling[:nickname]

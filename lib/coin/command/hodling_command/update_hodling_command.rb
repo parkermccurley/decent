@@ -1,5 +1,5 @@
 class UpdateHodlingCommand
-  def self.execute
+  def self.execute(args)
     hodlings = Database[:holdings]
     hodlings.each do |hodling|
       currency = hodling[:currency]

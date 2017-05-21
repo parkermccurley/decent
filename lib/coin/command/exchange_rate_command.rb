@@ -1,12 +1,11 @@
 class ExchangeRateCommand
   def self.execute(args, options)
-    command = args.first
+    command  = args.first
+    commands = {
+      "list"   => ListExchangeRateCommand,
+      "update" => UpdateExchangeRateCommand
+    }
 
-    case command
-    when "list"
-      ListExchangeRateCommand.execute
-    when "update"
-      UpdateExchangeRateCommand.execute
-    end
+    commands[command].execute
   end
 end

@@ -1,18 +1,14 @@
 class HodlingCommand
   def self.execute(args, options)
-    command = args.first
+    command  = args.first
+    commands = {
+      "add"    => AddHodlingCommand,
+      "list"   => ListHodlingCommand,
+      "remove" => RemoveHodlingCommand,
+      "show"   => ShowHodlingCommand,
+      "update" => UpdateHodlingCommand
+    }
 
-    case command
-    when "add"
-      AddHodlingCommand.execute
-    when "list"
-      ListHodlingCommand.execute
-    when "remove"
-      RemoveHodlingCommand.execute args
-    when "show"
-      ShowHodlingCommand.execute args
-    when "update"
-      UpdateHodlingCommand.execute
-    end
+    commands[command].execute args
   end
 end
