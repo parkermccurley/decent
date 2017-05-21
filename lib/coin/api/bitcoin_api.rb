@@ -1,7 +1,7 @@
 class BitcoinAPI
   def self.get_balance(address)
-    url = "https://blockchain.info/address/#{address}?format=json"
-    return JSON.parse(RestClient.get url)["final_balance"]
+    url = "https://blockchain.info/q/addressbalance/#{address}"
+    return RestClient.get(url).to_f / 100000000.00
   end
 
   def self.get_exchange_rate
