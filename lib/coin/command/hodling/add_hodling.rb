@@ -1,4 +1,4 @@
-class AddHodlingCommand
+class AddHodling
   def self.execute(args)
     cli      = HighLine.new
     nickname = cli.ask "What is the nickname of this hodling?", String

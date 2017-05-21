@@ -1,4 +1,4 @@
-class ShowHodlingCommand
+class ShowHodling
   def self.execute(args)
     hodlings   = Database[:holdings]
     nickname   = args[1]

@@ -1,4 +1,4 @@
-class RemoveHodlingCommand
+class RemoveHodling
   def self.execute(args)
     hodlings = Database[:holdings]
     nickname = args[1]
