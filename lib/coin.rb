@@ -27,6 +27,7 @@ program :name, "coin"
 program :version, "0.0.1"
 program :description, "A ruby command line application for managing cryptocurrency holdings."
 
+# Commands
 command :hodling do |command|
   command.syntax = "coin hodling"
   command.description = "Run tasks related to coins you hodl"
