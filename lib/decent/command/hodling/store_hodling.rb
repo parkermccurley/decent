@@ -2,6 +2,7 @@ module Decent
   class StoreHodling
     def self.store(hodling)
       id                = hodling[:id]
+      nickname          = hodling[:nickname]
       address           = hodling[:address]
       currency          = hodling[:currency]
       balance           = hodling[:balance]
@@ -11,6 +12,7 @@ module Decent
 
       historic_hodlings.insert({
         holding_id: id,
+        nickname: nickname,
         address: address,
         currency: currency,
         balance: balance,

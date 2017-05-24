@@ -12,11 +12,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/parkertm/decent"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |file|
-    file.match(%r{^(test|spec|features)/})
-  end
-
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |file| File.basename(file) }
+  spec.files         = `git ls-files`.split($\)
+  spec.executables   = ["decent"]
   spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency "commander", ["~> 4.0"]
+  spec.add_runtime_dependency "rest-client", ["~> 2.0"]
+  spec.add_runtime_dependency "sequel", ["~> 4.0"]
+  spec.add_runtime_dependency "sqlite3", ["~> 1.3"]
 end

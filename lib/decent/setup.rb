@@ -1,7 +1,11 @@
 require "sequel"
 
 module Decent
-  Database = Sequel.sqlite("./lib/decent/storage/decent.db")
+  StorageDirectory = File.expand_path("~/.decent")
+  unless Dir[StorageDirectory].length > 0
+    Dir::mkdir(StorageDirectory)
+  end
+  Database = Sequel.sqlite("#{StorageDirectory}/decent.db")
 
   unless Database.table_exists? :holdings
     Database.create_table(:holdings) do
@@ -12,6 +16,19 @@ module Decent
       Float :balance
       DateTime :created_at
       DateTime :updated_at
+    end
+  end
+
+  unless Database.table_exists? :historic_holdings
+    Database.create_table(:historic_holdings) do
+      primary_key :id
+      Integer :holding_id
+      String :nickname
+      String :address
+      String :currency
+      Float :balance
+      DateTime :recorded_at
+      DateTime :created_at
     end
   end
 
@@ -32,18 +49,6 @@ module Decent
 
     currencies.each do |currency|
       Database[:exchange_rates].insert(currency: currency, rate: 0.00, created_at: DateTime.now, updated_at: DateTime.now)
-    end
-  end
-
-  unless Database.table_exists? :historic_holdings
-    Database.create_table(:historic_holdings) do
-      primary_key :id
-      Integer :holding_id
-      String :address
-      String :currency
-      Float :balance
-      DateTime :recorded_at
-      DateTime :created_at
     end
   end
 
