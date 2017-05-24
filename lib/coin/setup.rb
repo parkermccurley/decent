@@ -42,7 +42,6 @@ unless Database.table_exists? :historic_holdings
     Float :balance
     DateTime :recorded_at
     DateTime :created_at
-    DateTime :updated_at
   end
 end
 
@@ -54,6 +53,5 @@ unless Database.table_exists? :historic_exchange_rates
     Float :rate
     DateTime :recorded_at
     DateTime :created_at
-    DateTime :updated_at
   end
 end
