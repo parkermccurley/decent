@@ -1,7 +1,11 @@
 require "sequel"
 
 module Decent
-  Database = Sequel.sqlite("./lib/decent/storage/decent.db")
+  StorageDirectory = File.expand_path("~/.decent")
+  unless Dir[StorageDirectory].length > 0
+    Dir::mkdir(StorageDirectory)
+  end
+  Database = Sequel.sqlite("#{StorageDirectory}/decent.db")
 
   unless Database.table_exists? :holdings
     Database.create_table(:holdings) do
