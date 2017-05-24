@@ -38,7 +38,7 @@ decent uses SQLite3.
 
 ### historic_holdings
 ```SQL
-`id` integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+`id` integer,
 `holding_id` integer,
 `address` varchar(255),
 `currency` varchar(255),
