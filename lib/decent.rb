@@ -27,7 +27,7 @@ require "decent/api/api"
 module Decent
   # Initialization
   program :name, "decent"
-  program :version, "0.1.0"
+  program :version, "0.1.1"
   program :description, "A ruby command line application for managing cryptocurrency holdings."
 
   # Commands

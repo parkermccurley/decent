@@ -15,4 +15,8 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files`.split($\)
   spec.executables   = ["decent"]
   spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency "commander", ["~> 4.0"]
+  spec.add_runtime_dependency "rest-client", ["~> 2.0"]
+  spec.add_runtime_dependency "sequel", ["~> 4.0"]
 end
