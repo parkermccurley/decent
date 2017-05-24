@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class ExchangeRate
     def self.execute(args)
       command  = args.first

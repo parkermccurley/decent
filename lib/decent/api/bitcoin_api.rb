@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class BitcoinAPI
     def self.get_balance(address)
       url = "https://blockchain.info/q/addressbalance/#{address}"

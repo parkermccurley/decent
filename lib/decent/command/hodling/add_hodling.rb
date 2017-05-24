@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class AddHodling
     def self.execute(args)
       cli      = HighLine.new

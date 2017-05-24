@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class StoreExchangeRate
     def self.store(exchange_rate)
       id                      = exchange_rate[:id]

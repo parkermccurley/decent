@@ -1,15 +1,15 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "coin/version"
+require "decent/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "coin"
-  spec.version       = Coin::VERSION
+  spec.name          = "decent"
+  spec.version       = Decent::VERSION
   spec.authors       = ["moondog"]
   spec.email         = ["parkermccurlz@gmail.com"]
 
-  spec.summary       = %{Coin is a command line application for managing cryptocurrency holdings.}
-  spec.homepage      = "https://github.com/parkertm/coin"
+  spec.summary       = %{Decent is a command line application for managing cryptocurrency holdings.}
+  spec.homepage      = "https://github.com/parkertm/decent"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |file|

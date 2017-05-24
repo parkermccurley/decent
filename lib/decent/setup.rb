@@ -1,7 +1,7 @@
 require "sequel"
 
-module Coin
-  Database = Sequel.sqlite("./lib/coin/storage/coin.db")
+module Decent
+  Database = Sequel.sqlite("./lib/decent/storage/decent.db")
 
   unless Database.table_exists? :holdings
     Database.create_table(:holdings) do

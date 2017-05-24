@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class EtherAPI
     def self.get_balance(address)
       url = "https://api.blockcypher.com/v1/eth/main/addrs/#{address}/balance"

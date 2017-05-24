@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class LitecoinAPI
     def self.get_balance(address)
       url = "https://ltc.blockr.io/api/v1/address/info/#{address}"

@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class StoreHodling
     def self.store(hodling)
       id                = hodling[:id]

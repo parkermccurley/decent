@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class Hodling
     def self.execute(args)
       command  = args.first

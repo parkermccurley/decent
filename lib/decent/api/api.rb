@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class API
     def self.currency
       return {

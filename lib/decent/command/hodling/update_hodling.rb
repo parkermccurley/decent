@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class UpdateHodling
     def self.execute(args)
       hodlings = Database[:holdings]

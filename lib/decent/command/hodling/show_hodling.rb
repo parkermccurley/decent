@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class ShowHodling
     def self.execute(args)
       hodlings   = Database[:holdings]

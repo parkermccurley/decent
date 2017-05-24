@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class RemoveHodling
     def self.execute(args)
       hodlings = Database[:holdings]

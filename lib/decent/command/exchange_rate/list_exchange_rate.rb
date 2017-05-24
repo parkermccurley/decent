@@ -1,4 +1,4 @@
-module Coin
+module Decent
   class ListExchangeRate
     def self.execute
       exchange_rates = Database[:exchange_rates]
