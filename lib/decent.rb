@@ -27,7 +27,7 @@ require "decent/api/api"
 module Decent
   # Initialization
   program :name, "decent"
-  program :version, "0.1.1"
+  program :version, "0.2.0"
   program :description, "A ruby command line application for managing cryptocurrency holdings."
 
   # Commands
@@ -43,7 +43,6 @@ module Decent
   command :exchange_rate do |command|
     command.syntax = "decent exchange_rate"
     command.description = "Run tasks related to exchange rates"
-    command.option "-currency STRING", String, "Selects currency for task (BTC, LTC, ETH)"
     command.action do |args|
       ExchangeRate.execute args
     end
