@@ -1,5 +1,4 @@
 require "sequel"
-
 Database = Sequel.sqlite("./coin/storage/coin.db")
 
 unless Database.table_exists? :holdings
@@ -23,10 +22,14 @@ unless Database.table_exists? :exchange_rates
     DateTime :updated_at
   end
 
-  exchange_rates = Database[:exchange_rates]
+  currencies = [
+    "BTC",
+    "ETH",
+    "LTC"
+  ]
 
-  ["BTC", "ETH", "LTC"].each do |currency|
-    exchange_rates.insert(currency: currency, rate: 0.00, created_at: DateTime.now, updated_at: DateTime.now)
+  currencies.each do |currency|
+    Database[:exchange_rates].insert(currency: currency, rate: 0.00, created_at: DateTime.now, updated_at: DateTime.now)
   end
 end
 
@@ -39,7 +42,6 @@ unless Database.table_exists? :historic_holdings
     Float :balance
     DateTime :recorded_at
     DateTime :created_at
-    DateTime :updated_at
   end
 end
 
@@ -51,6 +53,5 @@ unless Database.table_exists? :historic_exchange_rates
     Float :rate
     DateTime :recorded_at
     DateTime :created_at
-    DateTime :updated_at
   end
 end
