@@ -18,6 +18,8 @@ Currently (as of 0.1.3) supports Bitcoin (BTC), Ethereum (ETH), and Litecoin (LT
 
 `gem install decent`
 
+![HODL](http://imgh.us/screenshot_77.png)
+
 **Note: The first time `decent` runs, it will create a SQLite3 database in your home
 directory like so: `~/.decent/decent.db`**
 
