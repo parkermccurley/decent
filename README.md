@@ -1,6 +1,6 @@
 # decent
 
-A Ruby command line application for managing cryptocurrency holdings.
+A command line application for managing cryptocurrency holdings.
 
 ## Synopsis
 
@@ -16,12 +16,84 @@ Currently (as of 0.1.3) supports Bitcoin (BTC), Ethereum (ETH), and Litecoin (LT
 
 ## Install
 
-`gem install decent`
+```sh
+$ gem install decent
+```
+
+## Quickstart
+
+```sh
+$ decent
+```
 
 ![HODL](http://imgh.us/screenshot_77.png)
 
-**Note: The first time `decent` runs, it will create a SQLite3 database in your home
-directory like so: `~/.decent/decent.db`**
+Note: The first time `decent` runs, it will create a SQLite3 database in your home
+directory like so: `~/.decent/decent.db`
+
+## Commands
+
+### Update Exchange Rates
+
+```sh
+$ decent exchange_rate update
+```
+
+Current exchange rates for all currencies are pulled from Coinbase and stored with a timestamp.
+The previous values are copied to the `historic_exchange_rates` table.
+
+### List Exchange Rates
+
+```sh
+$ decent exchange_rate list
+```
+
+The most recently queried information for each exchange rate will be listed.
+
+### Add Hodling
+
+```sh
+$ decent hodling add
+```
+
+Creates a prompt asking for a nickname, address, and currency for a new hodling.
+
+### Update Hodlings
+
+```sh
+$ decent hodling update
+```
+
+Current balances for all locally stored address are pulled from APIs and stored with a timestamp.
+The previous values are copied to the `historic_holdings` table.
+
+### List Hodlings
+
+```sh
+decent hodling list
+```
+
+The most recently queried information for each locally stored hodling will be listed.
+
+### Show Hodling
+
+```sh
+$ decent hodling show -nickname NICKNAME
+```
+
+The most recently queried information for the hodling with nickname NICKNAME will be displayed,
+along with its value in USD based on the most recently queried exchange_rate for its respective
+currency.
+
+### Remove Hodling
+
+```sh
+$ decent hodling remove -nickname NICKNAME
+```
+
+The most recently queried information for the hodling with nickname NICKNAME will be removed, and
+that hodling will no longer appear in the `holdings` table. Related entries in the
+`historic_holdings` table will not be affected.
 
 ## Schema
 
@@ -67,61 +139,6 @@ decent uses SQLite3.
 `recorded_at` timestamp,
 `created_at` timestamp
 ```
-
-## Commands
-
-### Update Exchange Rates
-
-**Command:** `decent exchange_rate update`
-
-**Result:** Current exchange rates for all currencies are pulled from Coinbase and
-stored with a timestamp. The previous values are copied to the `historic_exchange_rates`
-table.
-
-### List Exchange Rates
-
-**Command:** `decent exchange_rate list`
-
-**Result:** The most recently queried information for each exchange rate will be
-listed.
-
-### Add Hodling
-
-**Command:** `decent hodling add`
-
-**Result:** Creates a prompt asking for a nickname, address, and currency for a new
-hodling.
-
-### Update Hodlings
-
-**Command:** `decent hodling update`
-
-**Result:** Current balances for all locally stored address are pulled from the APIs
-and stored with a timestamp. The previous values are copied to the `historic_holdings`
-table.
-
-### List Hodlings
-
-**Command:** `decent hodling list`
-
-**Result:** The most recently queried information for each locally stored hodling will
-be listed.
-
-### Show Hodling
-
-**Command:** `decent hodling show -nickname NICKNAME`
-
-**Result:** The most recently queried information for the hodling with nickname NICKNAME
-will be displayed, along with its value in USD based on the most recently queried
-exchange rate for its respective currency.
-
-### Remove Hodling
-
-**Command:** `decent hodling remove -nickname NICKNAME`
-
-**Result:** The most recently queried information for the hodling with nickname NICKNAME
-will be removed, and that hodling will no longer appear in the `holdings` table.
-Related entries in the `historic_holdings` table will not be affected.
 
 ## Donations
 
