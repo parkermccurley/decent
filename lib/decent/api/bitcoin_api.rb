@@ -1,13 +1,13 @@
 module Decent
   class BitcoinAPI
     def self.get_balance(address)
-      url = "https://blockchain.info/q/addressbalance/#{address}"
-      return RestClient.get(url).to_f / 10**8
+      response = URI("https://blockchain.info/q/addressbalance/#{address}").read
+      return response.to_f / 10**8
     end
 
     def self.get_exchange_rate
-      url = "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
-      return JSON.parse(RestClient.get url)["data"]["rates"]["USD"]
+      response = URI("https://api.coinbase.com/v2/exchange-rates?currency=BTC").read
+      return JSON.parse(response, object_class: OpenStruct).data.rates.USD
     end
   end
 end

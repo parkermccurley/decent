@@ -3,7 +3,8 @@ require "bundler/setup"
 require "commander/import"
 require "highline"
 require "json"
-require "rest-client"
+require "open-uri"
+require 'ostruct'
 require "rubygems"
 
 # Application Requirements
