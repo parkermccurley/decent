@@ -70,7 +70,7 @@ The previous values are copied to the `historic_holdings` table.
 ### List Hodlings
 
 ```sh
-decent hodling list
+$ decent hodling list
 ```
 
 The most recently queried information for each locally stored hodling will be listed.
