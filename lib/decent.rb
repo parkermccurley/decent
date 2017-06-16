@@ -8,8 +8,11 @@ require "ostruct"
 require "rubygems"
 
 # Application Requirements
-require "decent/constants"
 require "decent/setup"
+require "decent/constants/constants"
+require "decent/constants/bitcoin_constants"
+require "decent/constants/ether_constants"
+require "decent/constants/litecoin_constants"
 require "decent/command/hodling/hodling"
 require "decent/command/hodling/add_hodling"
 require "decent/command/hodling/list_hodling"
