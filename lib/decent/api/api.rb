@@ -3,7 +3,7 @@ module Decent
     def self.currency
       return {
         "BTC" => BitcoinAPI,
-        "ETH" => EtherAPI,
+        "ETH" => EthereumAPI,
         "LTC" => LitecoinAPI
       }
     end

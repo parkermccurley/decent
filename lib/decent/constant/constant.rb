@@ -3,7 +3,7 @@ module Decent
     def self.currency
       return {
         "BTC" => BitcoinConstant,
-        "ETH" => EtherConstant,
+        "ETH" => EthereumConstant,
         "LTC" => LitecoinConstant
       }
     end

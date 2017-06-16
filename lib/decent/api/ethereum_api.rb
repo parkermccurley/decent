@@ -1,5 +1,5 @@
 module Decent
-  class EtherAPI
+  class EthereumAPI
     @currency = "ETH"
 
     def self.get_balance(address)
