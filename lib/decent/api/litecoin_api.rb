@@ -15,7 +15,7 @@ module Decent
     def self.get_exchange_rate
       currency = "LTC"
       begin
-        uri      = Constant.currency[@currency]::GET_EXCHANGE_RATE_URI
+        uri      = Constant.currency[currency]::GET_EXCHANGE_RATE_URI
         response = URI(uri).read
         return JSON.parse(response, object_class: OpenStruct).data.rates.USD
       rescue OpenURI::HTTPError => error
