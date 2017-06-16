@@ -6,14 +6,22 @@ describe "Constant" do
       expect(Decent::Constant.currency).to be_a Hash
     end
 
-    it "should return the BitcoinConstant class when passed 'BTC'" do
-      expect(Decent::Constant.currency["BTC"]).to equal Decent::BitcoinConstant
+    context " when passed 'BTC'" do
+      it "should return the BitcoinConstant class" do
+        expect(Decent::Constant.currency["BTC"]).to equal Decent::BitcoinConstant
+      end
     end
-    it "should return the EthereumConstant class when passed 'ETH'" do
-      expect(Decent::Constant.currency["ETH"]).to equal Decent::EthereumConstant
+
+    context "when passed 'ETH'" do
+      it "should return the EthereumConstant class" do
+        expect(Decent::Constant.currency["ETH"]).to equal Decent::EthereumConstant
+      end
     end
-    it "should return the LitecoinConstant class when passed 'LTC'" do
-      expect(Decent::Constant.currency["LTC"]).to equal Decent::LitecoinConstant
+
+    context "when passed 'LTC'" do
+      it "should return the LitecoinConstant class" do
+        expect(Decent::Constant.currency["LTC"]).to equal Decent::LitecoinConstant
+      end
     end
   end
 end

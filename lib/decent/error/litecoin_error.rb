@@ -1,7 +1,7 @@
 module Decent
   class LitecoinError
     def self.get_balance_error(address, status)
-      puts case status
+      return case status
       when "404"
         "404 error while getting balance of Litecoin address #{address}. Resource is unavailable."
       when "500"
@@ -12,7 +12,7 @@ module Decent
     end
 
     def self.get_exchange_rate_error(status)
-      puts case status
+      return case status
       when "404"
         "404 error while getting exchange rate of Litecoin.  Resource is unavailable."
       else

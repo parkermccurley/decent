@@ -8,7 +8,7 @@ module Decent
         return JSON.parse(response)["balance"].to_f / 10**18
       rescue OpenURI::HTTPError => error
         status = error.io.status[0]
-        Error.currency[currency].get_balance_error address, status
+        puts Error.currency[currency].get_balance_error address, status
       end
     end
 
@@ -20,7 +20,7 @@ module Decent
         return JSON.parse(response, object_class: OpenStruct).data.rates.USD
       rescue OpenURI::HTTPError => error
         status = error.io.status[0]
-        Error.currency[currency].get_exchange_rate_error status
+        puts Error.currency[currency].get_exchange_rate_error status
       end
     end
   end
