@@ -4,10 +4,11 @@ require "commander/import"
 require "highline"
 require "json"
 require "open-uri"
-require 'ostruct'
+require "ostruct"
 require "rubygems"
 
 # Application Requirements
+require "decent/constants"
 require "decent/setup"
 require "decent/command/hodling/hodling"
 require "decent/command/hodling/add_hodling"
